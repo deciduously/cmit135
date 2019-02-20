@@ -147,8 +147,21 @@ while True:
 
         ####### YOUR CODE HERE ######
 
+    ### EXTRA CREDIT ###
     if(choice == '4'):  # Remove a password
         print("Which website would you like to remove?")
+        websiteToRemove = input()
+
+        # iterate until we find it
+        # If it's not found, nothing happens
+        for i in range(0, len(passwords)):
+            currentEntry = passwords[i]
+            if currentEntry[0] == websiteToRemove:
+                # We found it, remove from storage
+                print("Site found.  Removing " + websiteToRemove)
+                del passwords[i]
+                break
+    # END EXTRA CREDIT
 
     if(choice == '5'):  # Save the passwords to a file
         savePasswordFile(passwords, passwordFileName)
